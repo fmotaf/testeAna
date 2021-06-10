@@ -8,11 +8,11 @@
       </v-card-title>
 
       <v-card-text>
-        <div v-if="candidato.aresa === null">
+        <div v-if="candidato['aresa']['name'] === ''">
           <p>Sem experiência anterior!!!</p>
         </div>
         <div v-else>
-        <p> Experiência anterior: {{ JSON.parse(candidato.aresa[0]) }}</p>
+          <pre>Experiência anterior: {{ candidato['aresa'].name }} </pre>
         </div>
         <!-- {{ candidato.technologies }} -->
       <!-- {{ candidato.nome } placing a single v-spacer before or after the child components, the components will push to th} -->
@@ -41,5 +41,10 @@ export default {
       return mockdata.candidatos
       },
     },
-  }
+    filters: {
+      pretty: function(value) {
+        return JSON.stringify(JSON.parse(value), null, 2);
+    },
+  },
+}
 </script>
