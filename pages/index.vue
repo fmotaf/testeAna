@@ -7,17 +7,6 @@
         {{ candidato.name }}
       </v-card-title>
 
-      <v-card-text>
-        <div v-if="candidato['aresa']['name'] === ''">
-          <p>Sem experiência anterior!!!</p>
-        </div>
-        <div v-else>
-          <pre>Experiência anterior: {{ candidato['aresa'].name }} </pre>
-        </div>
-        <!-- {{ candidato.technologies }} -->
-      <!-- {{ candidato.nome } placing a single v-spacer before or after the child components, the components will push to th} -->
-      </v-card-text>
-
       <v-card-actions>
         <v-btn
           nuxt
